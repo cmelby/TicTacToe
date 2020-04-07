@@ -1,5 +1,6 @@
 export function calculateWinner(sqaures) {
     const lines = [
+        // look up array with all the possible winners
         [0, 1, 2],
         [3, 4, 5],
         [6, 7, 8],
@@ -9,7 +10,7 @@ export function calculateWinner(sqaures) {
         [0, 4, 8],
         [2, 4, 6],
     ]; 
-
+    // loop through the lookup array and check if the values are matching 
     for (let i = 0; i < lines.length; i++) {
         const [a, b, c] = lines[i]; 
         if (sqaures[a] && sqaures[a] === sqaures[b] && sqaures[a] === sqaures[c]) {
@@ -18,3 +19,11 @@ export function calculateWinner(sqaures) {
     }
     return null;
 }
+
+const squares = [
+    null, null, null,
+    'X', 'X', 'O',
+    null, null, null
+  ];
+  
+  console.log(calculateWinner(squares));
